@@ -1,0 +1,62 @@
+---
+title: "team"
+author: "Rushal Sohal, Rohan Mishra; github: rsohal, rohmish"
+date: "2/12/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## **Lab2**
+
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+head(choco)
+library(plyr)
+```
+
+1.
+```{r}
+length(choco$Rating)
+```
+
+1852 chocolate bars were rated.
+
+2.
+```{r}
+plot(choco$Review.Date, choco$Rating, main="Rating vs Year", xlab="Year", ylab="Rating")
+```
+
+There isn't any observable reltionship between rating and year. The number of ratings do tend to reduce as the years increment, however, there isn't any simple linear (or non-linear) realtion between the two.
+
+```{r}
+tmp <- table(choco$Review.Date)
+barplot(tmp, main="Reports per year", xlab="Year", col="green")
+```
+
+```{r}
+tmp <- table(choco$Rating)
+barplot(tmp, main="Bar plot for Ratings", xlab="Ratings", col="brown")
+```
+
+3.
+*Most Ratings = Highest number of data points*
+```{r}
+count(choco, "Company.Location")
+```
+The top 3 locations are U.S.A., France, Canada.
+
+```{r}
+aggregate(choco[,7], list(choco$Company.Location), mean) 
+```
+Canada = 3.31
+France = 3.25
+U.S.A. = 3.16
+
+Canada has the highest average Rating and U.S.A has the least.
+```{r}
+plot(choco$Company.Location, choco$Rating, main="Ratings vs Company Location")
+```
+
