@@ -1,0 +1,26 @@
+---
+title: "individual2"
+author: "Rohan Mishra | github: rohmish"
+date: "2/12/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+head(choco)
+```
+## The median rating is more than a 3 with around 722 ratings. With outliers at a rating of 5 and between 1 and 2.
+```{r}
+h =hist(choco$Rating, main = "Histogram of Rating", xlab="Rating",col="darkmagenta")
+text(h$mids,h$counts,labels=h$counts, adj=c(.5, -.2))
+```
+## There is no relation between the ratings and the percentage of cocoa in the chocolate. The mean ratings have in inconsistent cocoa percentage.
+```{r}
+plot(choco$Rating, choco$Cocoa.Pct, main = "rating vs pct", xlab = "Rating", ylab = "Cocoa Pct")
+```
+## 
