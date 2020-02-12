@@ -1,0 +1,31 @@
+---
+title: "individual1"
+author: "Rushal Sohal; github: rsohal"
+date: "2/12/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## **Lab 2**
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+head(choco)
+```
+
+**1.**
+```{r}
+hist <- hist(choco$Rating, main="Chocolate Ratings", xlab="Ratings", col="brown")
+text(hist$mids, hist$counts, label=hist$counts, adj=c(1, 0.08))
+```
+
+The histogram is roughly normally distributed with most of the ratings being around 3. Outliers exist for rating equal to 5 and less than 2.
+
+**2.**
+```{r}
+plot(choco$Cocoa.Pct, choco$Rating, main="Cocoa Pt. vs Ratings", xlab="Cocoa Pt", ylab="Ratings")
+```
+
+Based on the scatterplot, we can say that there is no to very weak correlation between cocoa percentage and ratings. For different cocoa percentages, different ratings exist and vice-versa.
