@@ -59,4 +59,11 @@ Canada has the highest average Rating and U.S.A has the least.
 ```{r}
 plot(choco$Company.Location, choco$Rating, main="Ratings vs Company Location")
 ```
+## What is the corelation between rating and the Company?
 
+```{r}
+plot(choco$Company, choco$Rating,main = "Company Vs Rating", xlab = "Company", ylab = "Ratong")
+```
+The Ratings tend to stay around the 3 mark for all the companies. However, Callebaut has the lowest rating in the group.
+
+## The workflow was really nice and easy to get into rhythm with after work was delegated. As soon as we decided on our roles in the lab, we met up and complete the lab very quickly and efficiently. This fares better than Lab 1 as we understand git and R studio better now. So as a result we were successful in completing the lab in a way we are happy with. 
